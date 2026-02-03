@@ -6,78 +6,239 @@
 }
 
 body, html {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
 }
 
 .App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(170deg, #e8f4f8 0%, #f0f6fa 40%, #f5f0e8 100%);
+}
+
+/* Header */
+header {
   text-align: center;
-  max-width: 600px;
-  padding: 20px;
-  margin-top: 15vh;
+  padding: 3rem 1.5rem 2rem;
 }
 
 header h1 {
-  font-size: 2rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1a3a52;
+  margin-bottom: 0.5rem;
+}
+
+header .subtitle {
+  font-size: 1.1rem;
+  color: #4a8a7a;
+  max-width: 440px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: 0 1.5rem 2rem;
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Tides Preview Card */
+.tides-preview {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 12px rgba(26, 58, 82, 0.08);
+}
+
+.tides-preview h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.3rem;
+  color: #1a3a52;
   margin-bottom: 1rem;
 }
 
-main p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
+.tide-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(26, 58, 82, 0.08);
+}
+
+.tide-entry:last-child {
+  border-bottom: none;
+}
+
+.tide-date {
+  font-weight: 600;
+  color: #1a3a52;
+  min-width: 120px;
+}
+
+.tide-times {
+  color: #357ABD;
+  font-weight: 600;
+  flex: 1;
+  text-align: center;
+}
+
+.tide-heights {
+  color: #6b8a9e;
+  font-size: 0.9rem;
+  min-width: 100px;
+  text-align: right;
+}
+
+.tides-loading {
+  color: #6b8a9e;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Download Section */
+.download-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.download-section h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.3rem;
+  color: #1a3a52;
+  margin-bottom: 1rem;
 }
 
 .download-links {
   display: flex;
-  gap: 20px;
+  gap: 1rem;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .download-link {
-  padding: 10px 20px;
-  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
   color: #fff;
-  background-color: #007bff;
-  border-radius: 5px;
+  background-color: #357ABD;
+  border-radius: 8px;
   text-decoration: none;
+  box-shadow: 0 2px 8px rgba(53, 122, 189, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .download-link:hover {
-  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(53, 122, 189, 0.4);
+  background-color: #2d6aa3;
+}
+
+.download-link:active {
+  transform: translateY(0);
+}
+
+.download-link svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.calendar-note {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #6b8a9e;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(26, 58, 82, 0.1);
+  margin-top: auto;
 }
 
 .donate-text {
-  margin-top: 40px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #555;
+  margin-bottom: 0.75rem;
 }
 
 .coffee-link {
   display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
   color: #fff;
   background-color: #ff813f;
-  border-radius: 5px;
+  border-radius: 8px;
   text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 2px 8px rgba(255, 129, 63, 0.3);
 }
 
 .coffee-link:hover {
   background-color: #e06b2b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 129, 63, 0.4);
 }
 
+.attribution {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #9ab;
+}
+
+/* Mobile Responsive */
 @media (max-width: 600px) {
+  header {
+    padding: 2rem 1rem 1.5rem;
+  }
+
   header h1 {
     font-size: 1.8rem;
   }
 
+  header .subtitle {
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 0 1rem 1.5rem;
+  }
+
+  .tide-entry {
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.75rem 0;
+  }
+
+  .tide-date {
+    min-width: unset;
+  }
+
+  .tide-times {
+    text-align: left;
+  }
+
+  .tide-heights {
+    text-align: left;
+    min-width: unset;
+  }
+
   .download-link {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    padding: 0.65rem 1.2rem;
+    font-size: 0.95rem;
   }
 }
