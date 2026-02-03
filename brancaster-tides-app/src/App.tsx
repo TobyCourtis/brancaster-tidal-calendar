@@ -78,6 +78,45 @@ function App() {
             </header>
 
             <main>
+                <div className="download-section">
+                    <h2>Download Calendar</h2>
+                    <div className="download-links">
+                        <a
+                            href="/Brancaster_Tides_2026.ics"
+                            download="brancaster_tides_2026.ics"
+                            className="download-link"
+                        >
+                            <DownloadIcon />
+                            2026
+                        </a>
+                    </div>
+                    <p className="calendar-note">
+                        Works with Apple Calendar, Google Calendar, and Outlook
+                    </p>
+                </div>
+                <div className="donate-section">
+                    <p className="donate-text">
+                        Found this helpful? You can support me by donating to my London Marathon fundraiser!
+                    </p>
+                    <a
+                        href="https://2026tcslondonmarathon.enthuse.com/pf/toby-courtis"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="coffee-link"
+                        onClick={() => {
+                            try {
+                                fetch("https://api.counterapi.dev/v2/toby-courtiss-team-2758/london-fundraiser/up", {
+                                    mode: "no-cors"
+                                }).catch(() => {});
+                            } catch {}
+                        }}
+                    >
+                        Donate here
+                    </a>
+                </div>
+            </main>
+
+            <footer>
                 <div className="tides-preview">
                     <h2>Upcoming High Tides</h2>
                     {loading ? (
@@ -95,51 +134,6 @@ function App() {
                     )}
                 </div>
 
-                <div className="download-section">
-                    <h2>Download Calendar</h2>
-                    <div className="download-links">
-                        <a
-                            href="/Brancaster_Tides_2025.ics"
-                            download="brancaster_tides_2025.ics"
-                            className="download-link"
-                        >
-                            <DownloadIcon />
-                            2025
-                        </a>
-                        <a
-                            href="/Brancaster_Tides_2026.ics"
-                            download="brancaster_tides_2026.ics"
-                            className="download-link"
-                        >
-                            <DownloadIcon />
-                            2026
-                        </a>
-                    </div>
-                    <p className="calendar-note">
-                        Works with Apple Calendar, Google Calendar, and Outlook
-                    </p>
-                </div>
-            </main>
-
-            <footer>
-                <p className="donate-text">
-                    Found this helpful? You can support me by donating to my London Marathon fundraiser!
-                </p>
-                <a
-                    href="https://2026tcslondonmarathon.enthuse.com/pf/toby-courtis"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="coffee-link"
-                    onClick={() => {
-                        try {
-                            fetch("https://api.counterapi.dev/v2/toby-courtiss-team-2758/london-fundraiser/up", {
-                                mode: "no-cors"
-                            }).catch(() => {});
-                        } catch {}
-                    }}
-                >
-                    Donate here
-                </a>
                 <p className="attribution">Brancaster Tidal Calendar</p>
             </footer>
         </div>
