@@ -49,9 +49,15 @@ main p {
   background-color: #0056b3;
 }
 
+.donate-text {
+  margin-top: 40px;
+  font-size: 1rem;
+  color: #555;
+}
+
 .coffee-link {
   display: inline-block;
-  margin-top: 30px;
+  margin-top: 15px;
   padding: 10px 20px;
   font-size: 1rem;
   color: #fff;

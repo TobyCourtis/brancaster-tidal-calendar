@@ -14,6 +14,7 @@ function App() {
                         2026
                     </a>
                 </div>
+                <p className="donate-text">Found this helpful? You can support me by donating to my London Marathon fundraiser!</p>
                 <a
                     href="https://2026tcslondonmarathon.enthuse.com/pf/toby-courtis"
                     target="_blank"
@@ -21,13 +22,13 @@ function App() {
                     className="coffee-link"
                     onClick={() => {
                         try {
-                            fetch("https://api.counterapi.dev/v2/toby-courtiss-team-2758/first-counter-2758/up", {
+                            fetch("https://api.counterapi.dev/v2/toby-courtiss-team-2758/london-fundraiser/up", {
                                 mode: "no-cors"
                             }).catch(() => {});
                         } catch {}
                     }}
                 >
-                    Donate to my London Marathon fundraiser
+                    Donate here
                 </a>
             </main>
         </div>

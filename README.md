@@ -31,3 +31,7 @@ cd brancaster-tides-app
 npm install
 npm start
 ```
+
+## Donate button counter
+
+View the donate button click counter at [counterapi.dev](https://app.counterapi.dev/team/toby-courtiss-team/counters/3135).
