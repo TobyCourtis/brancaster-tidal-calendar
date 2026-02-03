@@ -8,7 +8,7 @@ function App() {
                 <h1>Brancaster Tidal Calendar</h1>
             </header>
             <main>
-                <p>Download here:</p>
+                <p>Download here</p>
                 <div className="download-links">
                     <a href="/Brancaster_Tides_2026.ics" download="brancaster_tides_2026.ics" className="download-link">
                         2026
