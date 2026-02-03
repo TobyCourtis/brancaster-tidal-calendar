@@ -118,7 +118,7 @@ function App() {
 
             <footer>
                 <div className="tides-preview">
-                    <h2>Upcoming High Tides</h2>
+                    <h2>{loading || upcomingTides.length > 0 ? 'Upcoming High Tides' : 'Example Upcoming High Tides'}</h2>
                     {loading ? (
                         <p className="tides-loading">Loading tide times...</p>
                     ) : upcomingTides.length > 0 ? (
@@ -130,7 +130,19 @@ function App() {
                             </div>
                         ))
                     ) : (
-                        <p className="tides-loading">No upcoming tides available</p>
+                        [
+                            { dateLabel: 'Mon 5 Jan', times: 'HT 06:32, 18:55', heights: '6.8m, 7.0m' },
+                            { dateLabel: 'Tue 6 Jan', times: 'HT 07:18, 19:40', heights: '6.9m, 7.1m' },
+                            { dateLabel: 'Wed 7 Jan', times: 'HT 08:01, 20:22', heights: '6.7m, 6.8m' },
+                            { dateLabel: 'Thu 8 Jan', times: 'HT 08:42, 21:03', heights: '6.4m, 6.5m' },
+                            { dateLabel: 'Fri 9 Jan', times: 'HT 09:21, 21:42', heights: '6.1m, 6.2m' },
+                        ].map((tide, i) => (
+                            <div className="tide-entry" key={i}>
+                                <span className="tide-date">{tide.dateLabel}</span>
+                                <span className="tide-times">{tide.times}</span>
+                                <span className="tide-heights">{tide.heights}</span>
+                            </div>
+                        ))
                     )}
                 </div>
 
