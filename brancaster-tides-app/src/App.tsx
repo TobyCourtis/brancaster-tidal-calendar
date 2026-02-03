@@ -2,11 +2,6 @@ import React from 'react';
 import './App.css';
 
 function App() {
-    const files = {
-        2025: "/Brancaster_Tides_2025.ics",
-        2026: "/Brancaster_Tides_2026.ics"
-    };
-
     return (
         <div className="App">
             <header>
@@ -15,14 +10,25 @@ function App() {
             <main>
                 <p>Download here:</p>
                 <div className="download-links">
-                    <a href={files[2025]} download="brancaster_tides_2025.ics" className="download-link">
-                        2025
-                    </a>
-
-                    <a href={files[2026]} download="brancaster_tides_2026.ics" className="download-link">
+                    <a href="/Brancaster_Tides_2026.ics" download="brancaster_tides_2026.ics" className="download-link">
                         2026
                     </a>
                 </div>
+                <a
+                    href="https://2026tcslondonmarathon.enthuse.com/pf/toby-courtis"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="coffee-link"
+                    onClick={() => {
+                        try {
+                            fetch("https://api.counterapi.dev/v2/toby-courtiss-team-2758/first-counter-2758/up", {
+                                mode: "no-cors"
+                            }).catch(() => {});
+                        } catch {}
+                    }}
+                >
+                    Donate to my London Marathon fundraiser
+                </a>
             </main>
         </div>
     );
